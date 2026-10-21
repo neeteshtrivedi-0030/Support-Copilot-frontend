@@ -1,0 +1,11 @@
+# Cross-platform npm runner (fixes Windows Git Bash / WSL shebang issue)
+if command -v npm.cmd >/dev/null 2>&1 || [ -n "$COMSPEC" ] || [ "$OS" = "Windows_NT" ]; then
+  NPM="npm.cmd"
+else
+  NPM="npm"
+fi
+
+$NPM run typecheck
+$NPM run lint
+$NPM run build
+$NPM test
