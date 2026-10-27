@@ -3,15 +3,7 @@
 import React from 'react';
 import { clsx } from 'clsx';
 import { Loader2 } from 'lucide-react';
-import { DocumentStatus } from '../../types';
-
-interface BadgeProps {
-  status?: DocumentStatus | string;
-  label?: string;
-  variant?: 'default' | 'success' | 'warning' | 'danger' | 'info' | 'purple';
-  showPulse?: boolean;
-  className?: string;
-}
+import { BadgeProps } from '../../types';
 
 export const Badge: React.FC<BadgeProps> = ({ status, label, variant, showPulse, className }) => {
   let displayLabel = label;

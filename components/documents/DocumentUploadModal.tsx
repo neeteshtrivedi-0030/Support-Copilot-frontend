@@ -11,11 +11,7 @@ import { DEPARTMENTS, ALLOWED_FILE_EXTENSIONS, MAX_FILE_SIZE_BYTES } from '../..
 import { UploadCloud, FileText, CheckCircle2, AlertCircle } from 'lucide-react';
 import { useAppDispatch } from '../../store/hooks';
 import { addToast } from '../../store/slices/uiSlice';
-
-interface DocumentUploadModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
+import { DocumentUploadModalProps } from '../../types';
 
 export const DocumentUploadModal: React.FC<DocumentUploadModalProps> = ({ isOpen, onClose }) => {
   const dispatch = useAppDispatch();

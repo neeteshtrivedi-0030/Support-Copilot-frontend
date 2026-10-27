@@ -28,11 +28,7 @@ import {
 } from 'lucide-react';
 import { clsx } from 'clsx';
 import { formatTimeAgo } from '../../utils/formatters';
-
-interface ChatContainerProps {
-  conversationId?: string;
-  initialPrompt?: string;
-}
+import { ChatContainerProps } from '../../types';
 
 export const ChatContainer: React.FC<ChatContainerProps> = ({ conversationId, initialPrompt }) => {
   const router = useRouter();

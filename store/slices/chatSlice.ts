@@ -1,14 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { SourceCitation } from '../../types/chat.types';
-
-interface ChatState {
-  currentConversationId: string | null;
-  isStreaming: boolean;
-  streamingAnswer: string;
-  streamingSources: SourceCitation[];
-  selectedDepartment: string;
-  inputDraft: string;
-}
+import { ChatState, SourceCitation } from '../../types';
 
 const initialState: ChatState = {
   currentConversationId: null,

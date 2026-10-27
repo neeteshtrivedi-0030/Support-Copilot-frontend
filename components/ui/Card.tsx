@@ -2,10 +2,7 @@
 
 import React from 'react';
 import { clsx } from 'clsx';
-
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  hoverable?: boolean;
-}
+import { CardProps } from '../../types';
 
 export const Card: React.FC<CardProps> = ({ children, className, hoverable = false, ...props }) => {
   return (

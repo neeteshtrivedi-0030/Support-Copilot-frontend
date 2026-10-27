@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { initializeAuth, setCredentials, logout as logoutAction } from '../store/slices/authSlice';
 import { authService } from '../services/auth.service';
-import { LoginPayload, RegisterPayload } from '../types/auth.types';
+import { LoginPayload, RegisterPayload } from '../types';
 
 export function useAuth() {
   const dispatch = useAppDispatch();

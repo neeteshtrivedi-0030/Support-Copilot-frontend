@@ -2,7 +2,7 @@
 
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { documentService } from '../services/document.service';
-import { DocumentListQuery } from '../types/document.types';
+import { DocumentListQuery, DocumentUploadPayload } from '../types';
 
 export const DOCUMENTS_QUERY_KEY = ['documents'];
 
@@ -23,7 +23,7 @@ export function useDocuments(query?: DocumentListQuery) {
   });
 
   const uploadMutation = useMutation({
-    mutationFn: ({ file, department, name }: { file: File; department: string; name?: string }) =>
+    mutationFn: ({ file, department, name }: DocumentUploadPayload) =>
       documentService.uploadDocument(file, department, name),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: DOCUMENTS_QUERY_KEY });

@@ -8,7 +8,7 @@ import { registerSchema } from '../../utils/validation/auth.schema';
 import { Input } from '../../components/ui/Input';
 import { Button } from '../../components/ui/Button';
 import { DEPARTMENTS } from '../../utils/constants';
-import { UserDepartment, UserRole } from '../../types/auth.types';
+import { UserDepartment, UserRole } from '../../types';
 import { Bot, User as UserIcon, Mail, Lock, Shield, AlertCircle, ArrowRight } from 'lucide-react';
 
 export default function RegisterPage() {

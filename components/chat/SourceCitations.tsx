@@ -1,12 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { SourceCitation } from '../../types/chat.types';
+import { SourceCitation, SourceCitationsProps } from '../../types';
 import { FileText, ChevronDown, ChevronUp, ExternalLink, Bookmark } from 'lucide-react';
-
-interface SourceCitationsProps {
-  sources: SourceCitation[];
-}
 
 export const SourceCitations: React.FC<SourceCitationsProps> = ({ sources }) => {
   const [isExpanded, setIsExpanded] = useState(false);

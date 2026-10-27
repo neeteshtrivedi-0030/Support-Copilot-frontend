@@ -2,10 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
-
-interface MarkdownMessageProps {
-  content: string;
-}
+import { MarkdownMessageProps } from '../../types';
 
 export const MarkdownMessage: React.FC<MarkdownMessageProps> = ({ content }) => {
   // Preprocess any weird formatting (like ^(Source ...)^ or standalone <br> tags)

@@ -8,6 +8,9 @@ import {
   Conversation,
   ChatMessage,
   StreamEvent,
+  ChatFeedbackPayload,
+  ConversationListResult,
+  ConversationDetailResult,
 } from '../types';
 
 export const chatService = {
@@ -94,7 +97,7 @@ export const chatService = {
     page = 1,
     limit = 20,
     search?: string
-  ): Promise<{ items: Conversation[]; total: number }> => {
+  ): Promise<ConversationListResult> => {
     const response = await apiClient.get<ApiResponse<any>>('/conversations', {
       params: {
         page,
@@ -116,9 +119,7 @@ export const chatService = {
   },
 
   // Get conversation with messages
-  getConversationById: async (
-    id: string
-  ): Promise<{ conversation: Conversation; messages: ChatMessage[] }> => {
+  getConversationById: async (id: string): Promise<ConversationDetailResult> => {
     const response = await apiClient.get<
       ApiResponse<{ conversation: any; messages: ChatMessage[] }>
     >(`/conversations/${id}`);
@@ -159,12 +160,7 @@ export const chatService = {
   },
 
   // Submit feedback for RAG response
-  submitFeedback: async (payload: {
-    messageId: string;
-    conversationId: string;
-    rating: 'helpful' | 'not_helpful';
-    comment?: string;
-  }): Promise<void> => {
+  submitFeedback: async (payload: ChatFeedbackPayload): Promise<void> => {
     await apiClient.post('/chat/feedback', payload);
   },
 };

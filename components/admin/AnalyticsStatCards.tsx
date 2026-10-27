@@ -2,12 +2,8 @@
 
 import React from 'react';
 import { Card } from '../ui/Card';
-import { AnalyticsMetrics } from '../../types/analytics.types';
+import { AnalyticsMetrics, AnalyticsStatCardsProps } from '../../types';
 import { Users, FileText, HelpCircle, CheckCircle, Clock, ThumbsUp } from 'lucide-react';
-
-interface AnalyticsStatCardsProps {
-  metrics: AnalyticsMetrics | null;
-}
 
 export const AnalyticsStatCards: React.FC<AnalyticsStatCardsProps> = ({ metrics }) => {
   const raw = metrics as any;

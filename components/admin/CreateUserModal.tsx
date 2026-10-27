@@ -8,16 +8,10 @@ import { adminService } from '../../services/admin.service';
 import { useJoiValidation } from '../../hooks/useJoiValidation';
 import { registerSchema } from '../../utils/validation/auth.schema';
 import { DEPARTMENTS } from '../../utils/constants';
-import { UserDepartment, UserRole } from '../../types/auth.types';
+import { UserDepartment, UserRole, CreateUserModalProps } from '../../types';
 import { useAppDispatch } from '../../store/hooks';
 import { addToast } from '../../store/slices/uiSlice';
 import { User, Mail, Lock, Shield, UserPlus, AlertCircle } from 'lucide-react';
-
-interface CreateUserModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onSuccess: () => void;
-}
 
 export const CreateUserModal: React.FC<CreateUserModalProps> = ({ isOpen, onClose, onSuccess }) => {
   const dispatch = useAppDispatch();

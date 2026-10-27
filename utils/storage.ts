@@ -1,5 +1,5 @@
 import { AUTH_STORAGE_KEY, REFRESH_STORAGE_KEY, USER_STORAGE_KEY } from './constants';
-import { User } from '../types/auth.types';
+import { User } from '../types';
 
 export const storage = {
   getToken: (): string | null => {

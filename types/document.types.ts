@@ -43,3 +43,22 @@ export interface PaginatedResult<T> {
   limit: number;
   totalPages: number;
 }
+
+export interface DocumentUploadPayload {
+  file: File;
+  department: string;
+  name?: string;
+}
+
+export interface DocumentUploadModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export interface DocumentTableProps {
+  documents: DocumentItem[];
+  isLoading: boolean;
+  onRetry: (id: string) => void;
+  onDelete: (id: string) => void;
+  onDownload: (id: string) => void;
+}

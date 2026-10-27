@@ -7,8 +7,9 @@ import { Sidebar } from './Sidebar';
 import { ToastContainer } from '../common/ToastContainer';
 import { useAppSelector } from '../../store/hooks';
 import { clsx } from 'clsx';
+import { AppShellProps } from '../../types';
 
-export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const AppShell: React.FC<AppShellProps> = ({ children }) => {
   const pathname = usePathname();
   const sidebarOpen = useAppSelector((state) => state.ui.sidebarOpen);
 

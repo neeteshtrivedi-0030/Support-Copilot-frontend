@@ -2,20 +2,12 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { DocumentItem } from '../../types/document.types';
+import { DocumentItem, DocumentTableProps } from '../../types';
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
 import { formatBytes, formatDate } from '../../utils/formatters';
 import { useAuth } from '../../hooks/useAuth';
 import { FileText, RotateCw, Trash2, Download, ExternalLink, Shield } from 'lucide-react';
-
-interface DocumentTableProps {
-  documents: DocumentItem[];
-  isLoading: boolean;
-  onRetry: (id: string) => void;
-  onDelete: (id: string) => void;
-  onDownload: (id: string) => void;
-}
 
 export const DocumentTable: React.FC<DocumentTableProps> = ({
   documents,

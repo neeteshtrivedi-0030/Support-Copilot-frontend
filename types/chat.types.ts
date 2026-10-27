@@ -68,3 +68,47 @@ export interface StreamEvent {
   responseTimeMs?: number;
   message?: string;
 }
+
+export interface ChatState {
+  currentConversationId: string | null;
+  isStreaming: boolean;
+  streamingAnswer: string;
+  streamingSources: SourceCitation[];
+  selectedDepartment: string;
+  inputDraft: string;
+}
+
+export interface ChatContainerProps {
+  conversationId?: string;
+  initialPrompt?: string;
+}
+
+export interface SourceCitationsProps {
+  sources: SourceCitation[];
+}
+
+export interface MarkdownMessageProps {
+  content: string;
+}
+
+export interface ChatFeedbackPayload {
+  messageId: string;
+  conversationId: string;
+  rating: 'helpful' | 'not_helpful';
+  comment?: string;
+}
+
+export interface RenameConversationPayload {
+  id: string;
+  title: string;
+}
+
+export interface ConversationListResult {
+  items: Conversation[];
+  total: number;
+}
+
+export interface ConversationDetailResult {
+  conversation: Conversation;
+  messages: ChatMessage[];
+}

@@ -2,6 +2,7 @@
 
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { chatService } from '../services/chat.service';
+import { RenameConversationPayload } from '../types';
 
 export const CONVERSATIONS_QUERY_KEY = ['conversations'];
 
@@ -31,7 +32,7 @@ export function useConversations(page = 1, limit = 20, search?: string) {
   });
 
   const renameConversationMutation = useMutation({
-    mutationFn: ({ id, title }: { id: string; title: string }) =>
+    mutationFn: ({ id, title }: RenameConversationPayload) =>
       chatService.renameConversation(id, title),
     onSuccess: (updated) => {
       queryClient.setQueriesData({ queryKey: CONVERSATIONS_QUERY_KEY }, (oldData: any) => {

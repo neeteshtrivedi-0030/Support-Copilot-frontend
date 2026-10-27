@@ -25,3 +25,7 @@ export interface AnalyticsMetrics {
     averageRetrievalScore: number;
   };
 }
+
+export interface AnalyticsStatCardsProps {
+  metrics: AnalyticsMetrics | null;
+}

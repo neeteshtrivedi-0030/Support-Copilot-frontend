@@ -3,14 +3,7 @@
 import React from 'react';
 import { clsx } from 'clsx';
 import { Loader2 } from 'lucide-react';
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'danger' | 'ghost' | 'outline';
-  size?: 'sm' | 'md' | 'lg';
-  isLoading?: boolean;
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
-}
+import { ButtonProps } from '../../types';
 
 export const Button: React.FC<ButtonProps> = ({
   children,

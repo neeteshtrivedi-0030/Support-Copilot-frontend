@@ -1,11 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ToastMessage } from '../../types';
-
-interface UiState {
-  sidebarOpen: boolean;
-  activeModal: string | null;
-  toasts: ToastMessage[];
-}
+import { UiState, ToastMessage } from '../../types';
 
 const initialState: UiState = {
   sidebarOpen: true,

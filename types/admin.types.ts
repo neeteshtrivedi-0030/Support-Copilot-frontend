@@ -8,3 +8,9 @@ export interface AdminUserListResult {
   limit: number;
   totalPages: number;
 }
+
+export interface CreateUserModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onSuccess: () => void;
+}

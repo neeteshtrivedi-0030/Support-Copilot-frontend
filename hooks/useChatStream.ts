@@ -10,7 +10,7 @@ import {
   setCurrentConversationId,
 } from '../store/slices/chatSlice';
 import { chatService } from '../services/chat.service';
-import { ChatMessage, SourceCitation, StreamEvent } from '../types/chat.types';
+import { ChatMessage, SourceCitation, StreamEvent } from '../types';
 import { CONVERSATIONS_QUERY_KEY } from './useConversations';
 
 export function useChatStream() {
