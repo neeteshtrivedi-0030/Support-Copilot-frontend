@@ -1,26 +1,13 @@
 import { apiClient } from './api';
-import { ApiResponse, LoginPayload, RegisterPayload, User } from '../types/auth.types';
-
-export interface BackendAuthTokens {
-  accessToken: string;
-  refreshToken: string;
-  expiresIn?: number;
-}
-
-export interface BackendAuthData {
-  user: User;
-  tokens?: BackendAuthTokens;
-  token?: string;
-  accessToken?: string;
-  refreshToken?: string;
-}
-
-export interface AuthSuccessData {
-  user: User;
-  token: string;
-  accessToken: string;
-  refreshToken?: string;
-}
+import {
+  ApiResponse,
+  LoginPayload,
+  RegisterPayload,
+  User,
+  BackendAuthTokens,
+  BackendAuthData,
+  AuthSuccessData,
+} from '../types';
 
 export const authService = {
   login: async (payload: LoginPayload): Promise<AuthSuccessData> => {

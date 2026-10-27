@@ -27,6 +27,27 @@ export interface AuthTokens {
   refreshToken?: string;
 }
 
+export interface BackendAuthTokens {
+  accessToken: string;
+  refreshToken: string;
+  expiresIn?: number;
+}
+
+export interface BackendAuthData {
+  user: User;
+  tokens?: BackendAuthTokens;
+  token?: string;
+  accessToken?: string;
+  refreshToken?: string;
+}
+
+export interface AuthSuccessData {
+  user: User;
+  token: string;
+  accessToken: string;
+  refreshToken?: string;
+}
+
 export interface LoginPayload {
   email: string;
   password: string;

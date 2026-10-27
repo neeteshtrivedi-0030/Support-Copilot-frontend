@@ -1,14 +1,11 @@
 import { apiClient } from './api';
-import { ApiResponse, AnalyticsMetrics, User, RegisterPayload } from '../types';
-
-export interface AdminUserListResult {
-  items: User[];
-  users: User[];
-  total: number;
-  page: number;
-  limit: number;
-  totalPages: number;
-}
+import {
+  ApiResponse,
+  AnalyticsMetrics,
+  User,
+  RegisterPayload,
+  AdminUserListResult,
+} from '../types';
 
 export const adminService = {
   getUsers: async (page = 1, limit = 20, search?: string): Promise<AdminUserListResult> => {
